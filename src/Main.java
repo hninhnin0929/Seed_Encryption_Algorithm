@@ -81,6 +81,15 @@ public class Main {
         String finalDecodedStr = new String(dec, UTF_8);
         System.out.println(finalDecodedStr);
 
+
+        // Split the inputString by "::" and store the substrings in an array
+        String[] substrings = finalDecodedStr.split("::");
+
+        // Get the last substring after "::"
+        String lastSubstring = substrings[substrings.length - 1];
+
+        System.out.println("Last substring after '::': " + lastSubstring);
+
         return finalDecodedStr;
     }
 }
