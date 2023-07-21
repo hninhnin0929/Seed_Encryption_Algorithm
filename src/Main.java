@@ -15,17 +15,19 @@ public class Main {
 //        int PLAINTEXT_LENGTH = 14;
 //        int CIPHERTEXT_LENGTH = 16;
 
-        int PLAINTEXT_LENGTH = plainText.getBytes().length;
+//        int PLAINTEXT_LENGTH = plainText.getBytes().length;
 
         //call seed encrypt algorithm
-        encryptWithSeed(pbUserKey, bszIV, pbData, PLAINTEXT_LENGTH);
+        encryptWithSeed(pbUserKey, bszIV, pbData);
 
         //call seed decrypt algorithm
         String encodedString = "L1abI6uyk0xgcZZKmfrf+lr6eU8GqcJyodxYcOGxdYaWkmItrHPdt5Knntd9xB/Pz+5nT/246wwdK9XWNE30aw==";
         decryptWithSeed(pbUserKey, bszIV, encodedString);
     }
 
-    public static String encryptWithSeed(byte[] pbUserKey, byte[] bszIV, byte[] pbData, int PLAINTEXT_LENGTH) {
+    public static String encryptWithSeed(byte[] pbUserKey, byte[] bszIV, byte[] pbData) {
+
+        int PLAINTEXT_LENGTH = pbData.length;
 
         System.out.print("\n");
         System.out.print("[ Test SEED reference code CBC]"+"\n");
